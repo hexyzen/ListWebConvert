@@ -1,0 +1,23 @@
+﻿@model WebApplication3222.Models.Function
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+   
+<div class="text-center">
+
+
+
+    <h2>@Html.Label((string)ViewBag.Name)</h2>
+
+    <n><button type="submit" name="mine" value="1">Click</button></n>
+
+
+    <n>
+        @Html.TextBox("myTextbox")
+
+    </n>
+
+    <h2>@Html.Label((string)ViewBag.Sort)</h2>
+    <n><button type="submit" name="sort_incr" value="1">Incr</button></n>
+    <n><button type="submit" name="sort_decr" value="1">Decr</button></n>
+</div>
+ }
