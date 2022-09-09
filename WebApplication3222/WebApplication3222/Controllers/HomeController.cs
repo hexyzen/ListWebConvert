@@ -14,7 +14,7 @@ namespace WebApplication3222.Controllers
     {
 
         static List<int> listIs = new List<int> { };
-
+        static List<int> listIncr = new List<int> { };
         [HttpGet]
         public ActionResult Index()
         {
@@ -26,13 +26,17 @@ namespace WebApplication3222.Controllers
         [HttpPost]
         public ActionResult Index(string myTextbox, [FromServices] ISort listSort)
         {
-            listSort.Sort(); //4
+            listSort.Sort(); //DI 4
 
             int temp = Convert.ToInt32(myTextbox);
             listIs.Add(temp);
 
             ViewBag.Name = string.Join(", ", listIs);
-            
+
+            listIs.Sort();
+            ViewBag.Sort = string.Join(", ", listIs);
+
+
             return View("Index");
         }
 
